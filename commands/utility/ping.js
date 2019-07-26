@@ -18,6 +18,8 @@ module.exports = {
       message.createdTimestamp}ms**\nAPI Latency: **${Math.round(
       client.ping
     )}ms**`)
-    const m = await message.channel.send(response);
+    .setTimestamp()
+    .setColor(vars.green)
+    message.channel.send(response)
   }
 };
