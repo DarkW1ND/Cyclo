@@ -12,5 +12,8 @@ module.exports = async (client, message) => {
   if (!message.content.startsWith(prefix)) return;
   let commandfile =
     client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
-  if (commandfile) commandfile.run(client, message, args);
+  if (commandfile)
+    commandfile.run(client, message, args).catch(error => {
+      message.channel.send(error);
+    });
 };
