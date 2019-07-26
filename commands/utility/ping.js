@@ -12,12 +12,12 @@ module.exports = {
     accessableby: "Members"
   },
   run: async (client, message, args) => {
-    const m = await message.channel.send(response);
     let response = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
     .setDescription(`Command Latency: **${m.createdTimestamp -
       message.createdTimestamp}ms**\nAPI Latency: **${Math.round(
       client.ping
     )}ms**`)
+    const m = await message.channel.send(response);
   }
 };
