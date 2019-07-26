@@ -14,5 +14,5 @@ module.exports = client => {
         );
     }
   };
-  ["utility"].forEach(x => load(x));
+  ["utility", "owner-only"].forEach(x => load(x));
 };
