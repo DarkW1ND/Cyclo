@@ -18,7 +18,7 @@ module.exports = {
     const errorm = client.emojis.get("554031332498604052")
     if (message.author.id !== "475673195706449933") {
       let response = new Discord.RichEmbed()
-      .setTitle(`${errorm} Oops!`
+      .setTitle(`${errorm} Oops!`)
       .setDescription(`You must be the bot owner to use this!`)
       .setColor(vars.error);
 
