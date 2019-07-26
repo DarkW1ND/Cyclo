@@ -23,7 +23,8 @@ module.exports = {
           message.createdTimestamp}ms**\nAPI Latency: **${Math.round(
           client.ping
         )}ms**`,
-        timestamp: new Date()
+        timestamp: new Date(),
+        color: vars.green
       }
     });
   }
