@@ -1,3 +1,5 @@
+const vars = require("../../variables.json");
+
 function clean(text) {
   if (typeof text === "string")
     return text
@@ -15,15 +17,15 @@ module.exports = {
     accessableby: "Owners Only"
   },
   run: async (client, message, args) => {
-    const errorm = client.emojis.get("554031332498604052")
+    const errorm = client.emojis.get("554031332498604052");
     if (message.author.id !== "475673195706449933") {
       let response = new Discord.RichEmbed()
-      .setTitle(`${errorm} Oops!`)
-      .setDescription(`You must be the bot owner to use this!`)
-      .setColor(vars.error);
+        .setTitle(`${errorm} Oops!`)
+        .setDescription(`You must be the bot owner to use this!`)
+        .setColor(vars.error);
 
-      return message.channel.send(response); 
-}
+      return message.channel.send(response);
+    }
     const code = args.join(" ");
 
     try {
