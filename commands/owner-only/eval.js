@@ -19,6 +19,7 @@ module.exports = {
   },
   run: async (client, message, args) => {
     const errorm = client.emojis.get("554031332498604052");
+    const checkm = client.emojis.get("554031332301471761");
     if (
       message.author.id === "475673195706449933" ||
       message.author.id === "575865352186101761"
@@ -31,7 +32,12 @@ module.exports = {
         if (typeof evaled !== "string")
           evaled = require("util").inspect(evaled);
 
-        message.channel.send(clean(evaled), { code: "xl" });
+        let response = new Discord.RichEmbed()
+          .setTitle(`${checkm} Output:`)
+          .setDescription(`\`\`\`${clean(evaled)}\`\`\``)
+          .setColor(vars.good);
+
+        message.channel.send(response);
       } catch (err) {
         message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
       }
