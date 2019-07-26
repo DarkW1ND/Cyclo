@@ -12,21 +12,19 @@ module.exports = {
     accessableby: "Members"
   },
   run: async (client, message, args) => {
-    exports.run = async (client, message, args, command) => {
-      const m = await message.channel.send("Pong?");
-      m.edit({
-        embed: {
-          author: {
-            name: client.user.username,
-            icon_url: client.user.avatarURL
-          },
-          description: `Command Latency: **${m.createdTimestamp -
-            message.createdTimestamp}ms**\nAPI Latency: **${Math.round(
-            client.ping
-          )}ms**`,
-          timestamp: new Date()
-        }
-      });
-    };
+    const m = await message.channel.send("Pong?");
+    m.edit({
+      embed: {
+        author: {
+          name: client.user.username,
+          icon_url: client.user.avatarURL
+        },
+        description: `Command Latency: **${m.createdTimestamp -
+          message.createdTimestamp}ms**\nAPI Latency: **${Math.round(
+          client.ping
+        )}ms**`,
+        timestamp: new Date()
+      }
+    });
   }
 };
