@@ -1,4 +1,5 @@
 const vars = require("../../variables.json");
+const Discord = require("discord.js");
 
 function clean(text) {
   if (typeof text === "string")
