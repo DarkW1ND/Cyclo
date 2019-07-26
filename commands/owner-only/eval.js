@@ -20,9 +20,22 @@ module.exports = {
   run: async (client, message, args) => {
     const errorm = client.emojis.get("554031332498604052");
     if (
-      message.author.id !== "475673195706449933" ||
-      message.author.id !== "575865352186101761"
+      message.author.id === "475673195706449933" ||
+      message.author.id === "575865352186101761"
     ) {
+      try {
+        const code = args.join(" ");
+
+        let evaled = eval(code);
+
+        if (typeof evaled !== "string")
+          evaled = require("util").inspect(evaled);
+
+        message.channel.send(clean(evaled), { code: "xl" });
+      } catch (err) {
+        message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+      }
+    } else {
       let response = new Discord.RichEmbed()
         .setTitle(`${errorm} Oops!`)
         .setDescription(`You must be the bot owner to use this!`)
@@ -30,21 +43,5 @@ module.exports = {
 
       return message.channel.send(response);
     }
-    const code = args.join(" ");
-
-    try {
-      let evaled = eval(code);
-
-      if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
-
-      message.channel.send(clean(evaled), { code: "xl" });
-    } catch (err) {
-      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-    }
   }
-};
-
-exports.conf = {
-  category: `Owner Only`,
-  aliases: [""]
 };
