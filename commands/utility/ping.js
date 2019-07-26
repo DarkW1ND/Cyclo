@@ -30,7 +30,7 @@ module.exports = {
     const msg = await message.channel.send(loading)
 
     setTimeout(function() {
-      msg.edit(ping)
+      msg.edit(response)
     }, 500);
   }
 };
