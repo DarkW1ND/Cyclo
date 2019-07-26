@@ -13,8 +13,10 @@ module.exports = {
   },
   run: async (client, message, args) => {
 
+    const loadem = client.emojis.get("568647216760356874");
+
     let loading = new Discord.RichEmbed()
-    .setDescription(`Loading, please wait`)
+    .setDescription(` ${loadem} Loading, please wait`)
     .setColor(vars.unknown)
 
     let response = new Discord.RichEmbed()
