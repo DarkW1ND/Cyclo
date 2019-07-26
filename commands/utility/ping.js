@@ -12,6 +12,11 @@ module.exports = {
     accessableby: "Members"
   },
   run: async (client, message, args) => {
+
+    let loading = new Discord.RichEmbed()
+    .setDescription(`Loading, please wait`)
+    .setColor(vars.unknown)
+
     let response = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
     .setDescription(`Command Latency: **${new Date().getTime() -
@@ -19,7 +24,11 @@ module.exports = {
       client.ping
     )}ms**`)
     .setTimestamp()
-    .setColor(vars.green)
-    message.channel.send(response)
+    .setColor(vars.good)
+    const msg = await message.channel.send(loading)
+
+    setTimeout(function() {
+      msg.edit(ping)
+    }, 500);
   }
 };
