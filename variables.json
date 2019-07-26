@@ -1,4 +1,7 @@
 {
-    "version": "0.1",
-    "author": "xItsDanger"
+  "version": "0.1",
+  "author": "xItsDanger",
+  "error": "#FF2D00",
+  "good": "#04FF00",
+  "unknown": "FBFF00"
 }
