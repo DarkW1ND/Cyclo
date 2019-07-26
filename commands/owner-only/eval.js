@@ -20,7 +20,8 @@ module.exports = {
       let response = new Discord.RichEmbed()
       .setTitle(`${errorm} Oops!`
       .setDescription(`You must be the bot owner to use this!`)
-      .setColor(vars.error)
+      .setColor(vars.error);
+
       return message.channel.send(response); 
 }
     const code = args.join(" ");
