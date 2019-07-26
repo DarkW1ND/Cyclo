@@ -14,7 +14,7 @@ module.exports = {
   run: async (client, message, args) => {
     let response = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
-    .setDescription(`Command Latency: **${m.createdTimestamp -
+    .setDescription(`Command Latency: **${newDate().getTime() -
       message.createdTimestamp}ms**\nAPI Latency: **${Math.round(
       client.ping
     )}ms**`)
