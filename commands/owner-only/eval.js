@@ -43,7 +43,13 @@ module.exports = {
     .setDescription(`**ERROR:** \n\`\`\`xl\nForbidden output\n\`\`\``)
     .setColor(vars.error)
 
+    let be = new Discord.RichEmbed()
+    .setTitle(`${errorm} Error!`)
+    .setDescription(`**ERROR:** \n\`\`\`xl\nBlacklisted output\n\`\`\``)
+    .setColor(vars.error)
+
     if(message.content.toLowerCase().includes('token'||'TOKEN')) return message.channel.send(fo)
+    if(message.content.toLowerCase().includes("setInterval(function(){message.channel.send")) return message.channel.send(be)
 
     try {
       let evaled = eval(code);
