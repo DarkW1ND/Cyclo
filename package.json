@@ -1,0 +1,21 @@
+{
+  "name": "cyclobot",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "xItsDanger",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^5.4.1",
+    "discord.js": "^11.5.1",
+    "djs-commands": "^1.2.2",
+    "enmap": "^5.1.0",
+    "megadb": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
