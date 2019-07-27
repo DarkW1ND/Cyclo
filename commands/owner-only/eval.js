@@ -29,12 +29,12 @@ module.exports = {
       return message.channel.send(response);
     }
     if(!message.author.id === "575865352186101761") {
-      let response = new Discord.RichEmbed()
+      let response1 = new Discord.RichEmbed()
       .setTitle(`${errorm} Oops!`)
       .setDescription(`You must be the bot owner to use this!`)
       .setColor(vars.error);
 
-    return message.channel.send(response);
+    return message.channel.send(response1);
     }
     const code = args.join(" ");
 
