@@ -35,8 +35,7 @@ module.exports = {
     .setDescription(`**ERROR:** \n\`\`\`xl\nForbidden output\n\`\`\``)
     .setColor(vars.error)
 
-    if(code === "client.config") return message.channel.send(fo);
-    if(code === "client.token") return message.channel.send(fo);
+    if(message.cleanContent.toLowerCase().includes(`token TOKEN`)) return message.channel.send(fo);
 
     try {
       let evaled = eval(code);
