@@ -20,22 +20,14 @@ module.exports = {
   run: async (client, message, args, guild, member) => {
     const errorm = client.emojis.get("554031332498604052");
     const okm = client.emojis.get("554031332301471761");
-    if (!message.author.id === "475673195706449933") {
-      let response = new Discord.RichEmbed()
-        .setTitle(`${errorm} Oops!`)
-        .setDescription(`You must be the bot owner to use this!`)
-        .setColor(vars.error);
 
-      return message.channel.send(response);
-    }
-    if(!message.author.id === "575865352186101761") {
-      let response1 = new Discord.RichEmbed()
-      .setTitle(`${errorm} Oops!`)
-      .setDescription(`You must be the bot owner to use this!`)
-      .setColor(vars.error);
+    let response = new Discord.RichEmbed()
+    .setTitle(`${errorm} Oops!`)
+    .setDescription(`You must be the bot owner to use this!`)
+    .setColor(vars.error);
 
-    return message.channel.send(response1);
-    }
+    if (!message.author.id === "475673195706449933") return message.channel.send(response)
+    if(!message.author.id === "575865352186101761") return message.channel.send(response);
     const code = args.join(" ");
 
     let fo = new Discord.RichEmbed()
