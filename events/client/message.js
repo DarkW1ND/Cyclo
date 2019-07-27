@@ -20,7 +20,7 @@ module.exports = async (client, message) => {
     .split(/ +/g);
   let cmd = args.shift().toLowerCase();
 
-  if (message.content.toLowerCase().includes('cyclo prefix'||`cyclo's prefix`||'Cyclo prefix'||`Cyclo's prefix`)) {
+  if (message.content.toLowerCase().includes(`cyclo prefix`||`cyclo's prefix`||`Cyclo prefix`||`Cyclo's prefix`)) {
     const strike = client.emojis.get("556565989479809035");
 
     let answer = new Discord.RichEmbed()
