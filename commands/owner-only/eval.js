@@ -35,7 +35,7 @@ module.exports = {
     .setDescription(`**ERROR:** \n\`\`\`xl\nForbidden output\n\`\`\``)
     .setColor(vars.error)
 
-    if(message.cleanContent.toLowerCase().includes(`token TOKEN`)) return message.channel.send(fo);
+    if(message.content.includes(`token TOKEN`)) return message.channel.send(fo);
 
     try {
       let evaled = eval(code);
